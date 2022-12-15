@@ -20,3 +20,8 @@ SELECT citypops.city, citypops.population, elevation FROM (
         AND max_year_city.city = citypops.city AND citypops.country = 'CO'
     JOIN city ON citypops.city = city.name AND city.country = 'CO'
     ORDER BY population DESC;
+
+-- Ejercicio No. 4: Obtenga los códigos de todos los países para los cuales (a) el PIB está compuesto al menos
+-- en un 70% por los sectores de Servicios e Industria juntos, o (b) la inflación es inferior al 2%.
+SELECT country FROM economy 
+WHERE service + industry >= 70 OR inflation < 2;
