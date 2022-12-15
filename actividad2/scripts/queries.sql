@@ -10,3 +10,13 @@ SELECT COUNT(river) AS numero_rios, name
 SELECT name FROM (
     SELECT country FROM ismember WHERE organization = 'UNESCO' OR organization = 'UNASUR'
 ) AS country_unesco_unasur JOIN country ON country_unesco_unasur.country = country.code;
+
+-- Ejercicio No. 3: ¿Cuál es el nombre, población y altitud de cada ciudad en Colombia (según lo registrado en
+-- la base de datos)? Los resultados deben estar ordenados de manera descendente por población.
+SELECT citypops.city, citypops.population, elevation FROM (
+    SELECT city, MAX(year) AS año_mas_reciente FROM citypops WHERE  country = 'CO' GROUP BY city
+) AS max_year_city 
+    JOIN citypops ON max_year_city.año_mas_reciente = citypops.year 
+        AND max_year_city.city = citypops.city AND citypops.country = 'CO'
+    JOIN city ON citypops.city = city.name AND city.country = 'CO'
+    ORDER BY population DESC;
