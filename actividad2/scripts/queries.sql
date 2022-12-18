@@ -1,3 +1,5 @@
+-- (a)
+
 -- Ejercicio No. 1:¿Cuántos ríos fluyen a través de cada país que tiene más de 15 ríos?
 SELECT COUNT(river) AS numero_rios, name
     FROM (
@@ -53,7 +55,7 @@ WHERE service + industry >= 70 OR inflation < 2;
     */
 
 
---## (b) el número de registros en la respuesta ##
+--(b)
 -- Para saber el numero de registros en cada respuesta solo se debe reemplazar la consulta realizada
 -- donde dice "querie" segun el caso:
 
