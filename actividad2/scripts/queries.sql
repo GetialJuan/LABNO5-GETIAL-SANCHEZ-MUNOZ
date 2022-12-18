@@ -28,7 +28,8 @@ SELECT name FROM (
 
 -- Ejercicio No. 3: ¿Cuál es el nombre, población y altitud de cada ciudad en Colombia (según lo registrado en
 -- la base de datos)? Los resultados deben estar ordenados de manera descendente por población.
-SELECT name, population, elevation FROM city WHERE country = 'CO' ORDER BY population DESC;
+SELECT name, population, elevation FROM city 
+WHERE country = 'CO' ORDER BY population DESC;
 
     -- Algebra Relacional
     /*
@@ -53,11 +54,11 @@ WHERE service + industry >= 70 OR inflation < 2;
 
 
 --## (b) el número de registros en la respuesta ##
--- Para saber el numero de registros en cada respuesta solo se debe reemplazar la consulta("querie") realizada
--- segun el caso:
+-- Para saber el numero de registros en cada respuesta solo se debe reemplazar la consulta realizada
+-- donde dice "querie" segun el caso:
 
     -- SQL
-        --- SELECT COUNT(*) FROM (querie);
+        --- SELECT COUNT(*) FROM (querie) AS numero_de_registros;
 
     -- Algebra relacional
         -- γ count(*) → numero_de_registros (querie)
